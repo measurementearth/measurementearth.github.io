@@ -1,0 +1,158 @@
+body {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+hr {
+    border-width: 0;
+    height: 1px;
+    color: black;
+    background-color: black;
+}
+
+p {
+    font-weight: normal;
+    //padding: 10px;
+    //margin-top: 20px;
+}
+
+img {
+    text-decoration: none;
+    border: 0;
+}
+
+li p {
+    //display: inline;
+    //margin:120px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+h2 {
+    margin-top: 50px;
+}
+    
+#header {
+    padding: 20px;
+    text-align: center;
+    font-size: 200%;
+}
+
+#header img {
+    vertical-align: middle;
+}
+
+#header a {
+    text-decoration: none;
+    color: black;
+}
+
+#header a:visited {
+    color: black;
+}
+
+#title {
+    font-size: 90%;
+    font-weight: normal;
+}
+
+#notes {
+    background: #BBCCFF;
+    font-size: 90%;
+    border: 1px;
+    border-color: #9999FF;
+    border-style: solid;
+    text-align: left;
+    width: 640px;
+    padding: 15px;
+    margin: 5px auto;
+}
+
+#content {
+    padding: 15px;
+    text-align: center;
+    width: 20em;
+    margin: auto;
+}
+
+input {
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+#footer {
+    font-size: 60%;
+    font-weight: normal;
+    padding: 10px;
+    margin: auto;
+}
+
+#footer hr {
+    width: 100px;
+}
+
+#coordinates {
+    padding: 20px;
+    text-align: center;
+}
+
+#links {
+    text-align: center;
+}
+
+#links img {
+    vertical-align: middle;
+    padding: 15px;
+}
+
+#map {
+    border: 1px;
+    border-color: #9999FF;
+    border-style: solid;
+    margin: 0 auto;
+}
+
+/* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+    background-image: url("images/me-root-banner.jpg");
+
+    /* Set a specific height */
+    height: 300px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    //background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+
+}
+
+#charts {
+    position: relative;
+    min-height: auto;
+    width: 100%;
+    //height: 20%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+

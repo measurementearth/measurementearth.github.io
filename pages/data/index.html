@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Measurement Earth Live Data</title>
+    <meta property='og:title' content='Measurement Earth Live Data' />
+    <meta property='og:description' content='The Measurement Earth Global Open Data and Trusted Sensor Platform Live Data Visualizer.' />
+    <meta property='og:url' content='https://www.measurement.earth' />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="../../css/leaflet-1.7.1.css" />
+    <script src="../../scripts/chart-3.2.1.min.js"></script>
+    <script src="../../scripts/leaflet-1.7.1.js"></script>
+    <script src='../../scripts/eosjs-api.js'></script>
+    <script src='../../scripts/eosjs-jsonrpc.js'></script>
+    <script src="../../scripts/me-lib.js"></script>
+    <script src="../../scripts/me-map.js"></script>
+    <script src="../../scripts/me-plot.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <meta name="description" content="Measurement Earth Global IoT Open Data and Trusted Sensor Platform Live Data Visualizer.">
+    <meta name="keywords" content="geospatial, map, sensor, quality, authenticity, contextual, measurements, environment, bigdata, IoT, blockchain">
+    <link href="../../me-favicon.ico" type="image/x-icon" rel="icon">
+    <link href="../../me-favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+
+
+    <h1>
+        24 Hour Charts
+    </h1>
+    <p id="links">Links</p>
+    <p id="station_id">Station ID: </p>
+    <p id="stream_id">Stream ID: </p>
+    <p id="time_period">Time: </p>
+    <p id="interval">Interval: </p>
+    <p id="last_seen">Time: </p>
+    <p id="page_generated">(Page generated: )</p>
+    <div id="charts">
+    </div>
+    <h1>Location Over Time</h1><br />
+    <div id="map" style="height: 100%; width: 100%"></div>
+
+    <script>
+
+
+
+        /* Get the URL parameters to zoom into specific device
+         would be nice to plot all data in stacked charts over time...
+         ?station=a111113.me
+         https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+         */
+        const params = new URLSearchParams(location.search);
+        for (let p of params) {
+            console.log(p)
+        }
+        let chain = params.get('chain')
+        console.log('chain: ' + chain)
+
+        me_map_init();
+        me_lib_init(chain);
+
+        let links = '<a href="../../index.html' + me_lib_get_chain_param(true) + '">Home</a>'
+        let station = params.get('station')
+        console.log('station: ' + station)
+        if (station) {
+            links += '&nbsp;&nbsp;<a href="' + (g_bootstrapInfo.live_stream_url + station) + '" target="_blank" rel="noopener noreferrer">Raw</a>'
+            me_plot_station(station)
+        }
+        document.getElementById('links').innerHTML = links
+
+    </script>
+    <br />
+
+    <br />
+
+    <img src="../../me-logo2-ruler-cropped.png" alt="Measurement Earth Logo" /><br />
+
+    &copy; Measurement Earth 2020-2022
+    <div id="footer">Contact: <a href="mailto:hello@measurement.earth">hello@measurement.earth</a></div>
+    <div id="footer">
+        <b>Socials</b><br /><br />
+        <a href="https://github.com/measurementearth">GitHub</a><br />
+        <a href="https://twitter.com/measure_earth">Twitter</a><br />
+        <a href="https://t.me/measure_earth">Telegram</a>
+        <br /><br />
+        <b>Resources</b><br /><br />
+        <a href="https://geohash.measurement.earth">geohash.measurement.earth</a>
+        <br />
+    </div>
+    <div id="footer">Build: v1.2.2</div>
+</body>
+</html>
