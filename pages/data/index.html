@@ -61,7 +61,7 @@
         let station = params.get('station')
         console.log('station: ' + station)
         if (station) {
-            links += '&nbsp;&nbsp;<a href="' + (g_bootstrapInfo.live_stream_url + station) + '" target="_blank" rel="noopener noreferrer">Raw</a>'
+            links += '&nbsp;&nbsp;<a href="' + (g_bootstrapInfo.live_stream_url(station)) + '" target="_blank" rel="noopener noreferrer">Raw</a>'
             me_plot_station(station)
         }
         document.getElementById('links').innerHTML = links
@@ -85,6 +85,6 @@
         <a href="https://geohash.measurement.earth">geohash.measurement.earth</a>
         <br />
     </div>
-    <div id="footer">Build: v1.2.2</div>
+    <div id="footer">Build: v1.2.3</div>
 </body>
 </html>
