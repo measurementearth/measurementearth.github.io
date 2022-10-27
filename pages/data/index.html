@@ -42,11 +42,7 @@
 
 
 
-        /* Get the URL parameters to zoom into specific device
-         would be nice to plot all data in stacked charts over time...
-         ?station=a111113.me
-         https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
-         */
+
         const params = new URLSearchParams(location.search);
         for (let p of params) {
             console.log(p)
@@ -59,10 +55,11 @@
 
         let links = '<a href="../../index.html' + me_lib_get_chain_param(true) + '">Home</a>'
         let station = params.get('station')
+        let days = params.get('days')
         console.log('station: ' + station)
         if (station) {
             links += '&nbsp;&nbsp;<a href="' + (g_bootstrapInfo.live_stream_url(station)) + '" target="_blank" rel="noopener noreferrer">Raw</a>'
-            me_plot_station(station)
+            me_plot_station(station, days)
         }
         document.getElementById('links').innerHTML = links
 
@@ -85,6 +82,6 @@
         <a href="https://geohash.measurement.earth">geohash.measurement.earth</a>
         <br />
     </div>
-    <div id="footer">Build: v1.2.3</div>
+    <div id="footer">Build: v1.3.0</div>
 </body>
 </html>
