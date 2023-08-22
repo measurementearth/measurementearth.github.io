@@ -1,0 +1,107 @@
+﻿<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Measurement Earth: How it Works</title>
+    <meta property='og:title' content='Measurement Earth' />
+    <meta property='og:image' content='https://www.measurement.earth/me-logo2-ruler-cropped.png' />
+    <meta property='og:description' content='The Measurement Earth Global Open Data and Trusted Sensor Platform Explainer.' />
+    <meta property='og:url' content='https://www.measurement.earth' />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="description" content="Measurement Earth Global IoT Open Data and Trusted Sensor Platform Explainer">
+    <meta name="keywords" content="geospatial, map, sensor, quality, authenticity, contextual, measurements, environment, bigdata, IoT, blockchain, air quality, explainer">
+    <link href="me-favicon.ico" type="image/x-icon" rel="icon">
+    <link href="me-favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+    <h1>
+        Measurement {Earth}: How Does It Work?
+    </h1>
+
+    <h2>
+        Technology
+    </h2>
+    <br />
+    <div style="width: 800px; text-align: left; margin: auto;">
+
+        The system, at its core, is about acquiring environmental data in a robust and low-maintenance way and then transmitting an
+        authentic and "trusted" measurement dataset to a publicly accessible cloud platform.
+        <br /><br />
+
+        Blockchain is one of those technologies that naturally fits.  It has a built-in authentication and trust layer and provides a means to publish widely accessible data.
+        <br /><br />
+
+        Helium Network is used because it is the most ubiquitous and accessible low-power wide-area-network (LPWAN) technology available right now.
+        <br /><br />
+
+        The weather stations take periodic measurements.  When measurements are completed, they are gathered into a blockchain "transaction" and signed with a unique "secret key", a key that only the weather station possesses.
+        The signed transaction is transmitted over the Helium network to a bridge server that I maintain.  The server's only purpose is to
+        forward the already-signed transactions to the blockchain for ingestion, and to ensure liveness of blockchain state on the devices.
+        <br /><br />
+        When a transaction is accepted into the blockchain, it is "proof" that the data came from the originating weather station and not from anywhere else.
+        <br /><br />
+
+        The big-picture view of the system is shown below.
+
+        The end result is that raw data gathered from sensors is compiled into blockchain history, available to anyone anywhere anytime to access and process.
+        For example, this website uses a publicly accessible HTTP API endpoint to pull the data and plot it in charts using Javascript, leaflet and chartjs.
+        <br /><br />
+        An AI platform or predictive or analytical data project can similarly access and ingest the data into proprietary or open models with simple API calls.
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <img src="./MeasurementEarthPlatform-r1.jpg" alt="Measurement Earth Platform Overview Image" />
+    <br />
+
+    <br />
+    <h2>
+        Economics
+    </h2>
+    <br />
+    <div style="width: 800px; text-align: left; margin: auto;">
+
+        Networks don't run themselves. Devices don't self-organize into existence. There are many players involved and everyone needs a cut to make this sustainable.
+        <br /><br />
+        The weather stations are hand-built from quality components.  It takes time and expertise to do this.
+        <br /><br />
+        The various networks in play have on-going data access costs.
+        <br /><br />
+        The cloud infrastructure is run by many independent yet collaborative organizations that work tirelessly to keep the lights on.
+        <br /><br />
+        So how do we (you and I) pay for this?  And what do we get out of it?  First and foremost, we get raw environmental data that cannot be taken down, revised or altered after-the-fact, and is available to us and anyone, anywhere, always.  You can't say that about a lot of data projects.
+        Secondly, we get a way to pay for this, to make it happen and keep it going and do what we love doing.
+        <br /><br />
+        I am introducing the concept of <b>Sponsors</b> and Operators.
+        <br /><br />
+        Sponsors commission new weather stations and keep paying for ongoing operating costs.  As part of commissioning, 1 year of operating costs are included.
+        <br /><br />
+        A portion of this operating cost is split with Operators.
+        <br /><br />
+        Operators are responsible for setting up (basically mounting, as the units otherwise work out of the box) in a suitable location with the occasional dust-off, photo and debug assistance.  Sponsors can be Operators, but this is not required.
+        <br /><br />
+        A portion of the yearly operating fees are used to pay for the network and other costs. The other portion is turned into native tokens (TLOS) and transferred to the registered station Operator.
+        If you want to become an Operator, you do have to know how to set up a blockchain wallet and create an account on Telos Network.  I can assist with this.
+        <br /><br />
+        After the year is up, a Sponsor (same or new one) can pay for another year of service, which is again split with the registered Operator in the form of native tokens.
+        <br /><br />
+
+    </div>
+    <img src="me-logo2-ruler-cropped.png" alt="Measurement Earth Logo" /><br />
+
+    &copy; Measurement Earth 2020-2023
+    <div id="footer">Contact: <a href="mailto:hello@measurement.earth">hello@measurement.earth</a></div>
+    <div id="footer">
+        <b>Socials</b><br /><br />
+        <a href="https://github.com/measurementearth">GitHub</a><br />
+        <a href="https://twitter.com/measure_earth">Twitter/X</a><br />
+        <a href="https://t.me/measure_earth">Telegram</a>
+        <br /><br />
+        <b>Resources</b><br /><br />
+        <br />
+
+    </div>
+    <div id="footer">Build: v1.4.0</div>
+</body>
+    </html>

@@ -55,7 +55,7 @@
         </h1>
         <button type="button" onclick="zoomPoints()">Zoom All Points</button>
         &nbsp;&nbsp;&nbsp;&nbsp;Include:
-        <input type="checkbox" onclick="gwCbSel()" id="gw_checkbox" checked /><label for="gw_checkbox">Gateways</label>
+        <input type="checkbox" onclick="inactiveCbSel()" id="inactive_checkbox"  /><label for="inactive_checkbox">Inactive</label>
         <input type="checkbox" onclick="airCbSel()" id="air_checkbox" checked /><label for="air_checkbox">Air Quality</label>
         <!-- <input type="checkbox" onclick="evCbSel()" id="ev_checkbox" checked /><label for="ev_checkbox">EV Stations</label> -->
         <!-- <input type="checkbox" onclick="agCbSel()" id="ag_checkbox" checked /><label for="ag_checkbox">Ag Stations</label> -->
@@ -65,6 +65,17 @@
 
         <div id="map" style="height: 500px; width: 1000px"></div>
             <script>
+
+                function getChecked() {
+                    var icbox = document.getElementById('inactive_checkbox')
+                    var aqcbox = document.getElementById('air_checkbox')
+                    return { inactive: icbox.checked, air: aqcbox.checked }
+                }
+
+                function inactiveCbSel(val) {
+                    me_lib_map_summary(getChecked())
+                }
+
                 const params = new URLSearchParams(location.search);
                 for (let p of params) {
                     console.log(p)
@@ -74,28 +85,33 @@
 
                 me_map_init();
                 me_lib_init(chain);
-                me_lib_map_summary();
+                me_lib_map_summary(getChecked());
 
-                </script>
+            </script>
         <br />
 
         <br />
+
+        <h1>
+            <a href="./how.html" target="_blank" rel="noopener noreferrer">How It Works</a>
+            <br />
+            <a href="./pages/stations/air_v2/index.html" target="_blank" rel="noopener noreferrer">Sensors</a>
+        </h1>
 
         <img src="me-logo2-ruler-cropped.png" alt="Measurement Earth Logo" /><br />
 
-        &copy; Measurement Earth 2020-2022
+        &copy; Measurement Earth 2020-2023
         <div id="footer">Contact: <a href="mailto:hello@measurement.earth">hello@measurement.earth</a></div>
         <div id="footer">
             <b>Socials</b><br /><br />
             <a href="https://github.com/measurementearth">GitHub</a><br />
-            <a href="https://twitter.com/measure_earth">Twitter</a><br />
+            <a href="https://twitter.com/measure_earth">Twitter/X</a><br />
             <a href="https://t.me/measure_earth">Telegram</a>
             <br /><br />
             <b>Resources</b><br/><br />
-            <a href="https://geohash.measurement.earth">geohash.measurement.earth</a>
             <br />
 
         </div>
-        <div id="footer">Build: v1.3.0</div>
+        <div id="footer">Build: v1.4.0</div>
     </body>
     </html>
