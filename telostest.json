@@ -1,0 +1,40 @@
+{
+  "producer_account_name": "measureearth",
+  "org": {
+    "candidate_name": "Measurement Earth",
+    "website": "https://www.measurement.earth",
+    "ownership_disclosure": "https://www.firmwaremodules.com",
+    "code_of_conduct": "https://app.telos.net/governance",
+    "email": "hello@measurement.earth",
+    "github_user": [ "firmwareguru" ],
+    "chain_resources": "",
+    "branding": {
+      "logo_256": "https://www.measurement.earth/me-logo2-ruler-cropped-transparent-256.png",
+      "logo_1024": "https://www.measurement.earth/me-logo2-ruler-cropped-transparent-1024.png",
+      "logo_svg": "https://www.measurement.earth/me-logo2-ruler-cropped-transparent-256.svg"
+    },
+    "location": {
+      "name": "Calgary",
+      "country": "CA",
+      "latitude": 51.078179,
+      "longitude": -114.144809
+    },
+    "social": {
+      "twitter": "measure_earth",
+      "github": "measurementearth",
+      "telegram": "measure_earth"
+    }
+  },
+  "nodes": [
+    {
+      "location": {
+        "name": "Calgary",
+        "country": "CA",
+        "latitude": 51.0535,
+        "longitude": -114.0961
+      },
+      "node_type": "producer",
+      "full": false
+    },
+  ]
+}
